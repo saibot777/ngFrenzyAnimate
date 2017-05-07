@@ -1,4 +1,4 @@
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import {trigger, state, style, transition, animate} from '@angular/animations';
 
 export const markedTrigger = trigger('markedState', [
   state('default', style({
@@ -29,4 +29,17 @@ export const markedTrigger = trigger('markedState', [
     animate('300ms ease-out')
   ]),
   // transition('marked => default', animate('300ms ease-out')),
+]);
+
+export const itemStateTrigger = trigger('itemState', [
+  transition(':enter', [
+    style({
+      opacity: 0,
+      transform: 'translatex(-100%)'
+    }),
+    animate('500ms ease-out', style({
+      opacity: 1,
+      transform: 'translatex(0)'
+    }))
+  ])
 ]);
