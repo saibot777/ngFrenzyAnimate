@@ -41,5 +41,15 @@ export const itemStateTrigger = trigger('itemState', [
       opacity: 1,
       transform: 'translatex(0)'
     }))
+  ]),
+  transition(':leave', [
+    style({
+      opacity: 1,
+      transform: 'translatex(0)'
+    }),
+    animate('500ms ease-in', style({
+      opacity: 0,
+      transform: 'translatex(100%)'
+    }))
   ])
 ]);
